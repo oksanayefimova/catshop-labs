@@ -1,5 +1,6 @@
 FROM python:3.11-slim
 WORKDIR /app
+RUN mkdir -p /data && chown -R appuser:appuser /data
 RUN useradd -u 10001 -r appuser
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
